@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store Object in Local Storage</title>
+</head>
+<body>
+    <h1>Store Object in Local Storage</h1>
+    
+    <script>
+        // Create an object
+        var userData = {
+            name: "taher",
+            email: "taher@gmail.com",
+            age: 23,
+            occupation : developer
+        };
+
+        // Convert the object to a JSON string
+        var jsonString = JSON.stringify(userData);
+
+        // Store the JSON string in local storage with a unique key
+        localStorage.setItem("userDetails", jsonString);
+
+    </script>
+</body>
+</html>

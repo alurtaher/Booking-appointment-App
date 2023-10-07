@@ -13,6 +13,9 @@
         <label for="email">Email:</label>
         <input type="email" id="email" required><br><br>
 
+        <label for="phonenumber">Phone Number:</label>
+        <input type="number" id="phonenumber" required><br><br>
+
         <button type="submit">Add User</button>
     </form>
 
@@ -31,7 +34,7 @@
 
             userDataArray.forEach(function(userData) {
                 var listItem = document.createElement("li");
-                listItem.textContent = "Name: " + userData.name + ", Email: " + userData.email;
+                listItem.textContent = "Name: " + userData.name + ", Email: " + userData.email + ", PhoneNumber " +userData.phonenumber;
                 userList.appendChild(listItem);
             });
         }
@@ -46,11 +49,13 @@
             // Get user input
             var name = document.getElementById("name").value;
             var email = document.getElementById("email").value;
+            var phonenumber = document.getElementById("phonenumber").value;
 
             // Create a user object
             var user = {
                 name: name,
-                email: email
+                email: email,
+                phonenumber:phonenumber
             };
 
             // Add the user to the array
@@ -62,6 +67,7 @@
             // Clear the form inputs
             document.getElementById("name").value = "";
             document.getElementById("email").value = "";
+            document.getElementById("phonenumber").value = "";
 
             // Display the updated user data
             displayUserData();

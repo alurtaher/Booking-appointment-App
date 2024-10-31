@@ -32,14 +32,9 @@ document.getElementById("userForm").addEventListener("submit", async function(ev
         email: email,
         phonenumber:phonenumber
     };
-
-    // Add the user to the array
-    // userDataArray.push(user);
-
-    // Save the updated array to local storage
-    // localStorage.setItem("userDataArray", JSON.stringify(userDataArray));
-
     //Instead of the Local Storage we save the data in the crudcrud
+    const result = await axios.post(`${baseURL}/appointmentData`,user);
+    console.log(result)
 
     // Clear the form inputs
     document.getElementById("name").value = "";
